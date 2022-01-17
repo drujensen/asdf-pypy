@@ -20,9 +20,9 @@ install_pypy() {
   local source_path="${tmp_dir}/pypy.tar.gz"
 
  (
-    echo "∗ Downloading and installing pypuy ${version} for ${platform}"
+    echo "∗ Downloading and installing pypy ${version} for ${platform}"
     curl --silent --fail --location --create-dirs --output "$source_path" "$download_url" || fail "Could not download pypy $version for platform $platform"
-    tar zxf "$source_path" -C "$install_path" --strip-components=1
+    tar xf "$source_path" -C "$install_path" --strip-components=1
     echo "The installation was successful!"
   ) || (
     rm -rf "$install_path"
